@@ -5,9 +5,7 @@
 #include <stdio.h>
 #include <dirent.h>
 #include <string.h>
-#define EODIR 1
-#define ECDIR -1
 
-int crawling();
+int crawling(const char* outfile);
 
 #endif
