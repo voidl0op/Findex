@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void find_path(const char* file) {
   char cmd[4096];
@@ -12,6 +13,21 @@ void find_path(const char* file) {
   while(fgets(buffer, 4096, fp) != NULL) fprintf(fptr, buffer);
   fclose(fptr);
   pclose(fp);
+  free(buffer);
+}
+
+char* get_path(FILE* fptr, int choice) {
+    char* path = malloc(4096);
+    if (!path) return NULL;
+    rewind(fptr);
+    for (int i = 1; i <= choice; i++) {
+        if (!fgets(path, 4096, fptr)) {
+            free(path);
+            return NULL;
+        }
+    }
+    path[strcspn(path, "\n")] = '\0';
+    return path;
 }
 
 void open_path(const char* path) {
