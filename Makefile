@@ -4,8 +4,8 @@ TARGET  = Findex
 
 all: $(TARGET)
 
-$(TARGET): main.c
-	$(CC) $(CFLAGS) -o $@ main.c
+$(TARGET): main.c file.c file.h
+	$(CC) $(CFLAGS) -o $@ main.c file.c
 
 clean:
 	rm -f $(TARGET)

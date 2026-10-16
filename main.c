@@ -1,23 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-void find_path(const char* file);
-void open_path(const char* path);
+#include "file.h"
 
 int main() {
-  find_path("thing.c");
+  char file[256];
+  printf("Enter the file wanted: ");
+  printf("%s\n",find_path(fgets(file, sizeof(file), stdin)));
+  open_path(find_path(file));
   return 0;
-}
-
-void find_path(const char* file) {
-  char cmd[4096];
-  snprintf(cmd, sizeof(cmd), "find . -name %s", file);
-  FILE *fp = popen(cmd, "r");
-  pclose(fp);
-}
-
-void open_path(const char* path) {
-  char cmd[4096];
-  snprintf(cmd, sizeof(cmd), "xdg-open \"%s\"", path);
-  system(cmd);
 }
