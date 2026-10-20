@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "file.h"
+#include "ui.h"
 
 int main() {
   char file[256];
