@@ -1,0 +1,43 @@
+window.launcher {
+  background-color: transparent;
+}
+
+window.launcher .card {
+  background-color: #222222;
+  border-radius: 18px;
+  margin: 14px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+window.launcher entry.search {
+  min-height: 38px;
+  border-radius: 12px;
+  font-size: 1.08em;
+  padding: 0 14px;
+  background-color: #222222;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+window.launcher entry.search:focus {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+window.launcher button.suggested-action {
+  min-height: 38px;
+  border-radius: 12px;
+  padding: 0 22px;
+  font-weight: 600;
+  background-color: #222222;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+window.launcher button.suggested-action:hover {
+  background-color: #101010;
+}
+
+window.launcher button.suggested-action:active {
+  background-color: #1a1a1a;
+}
